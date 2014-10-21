@@ -10,7 +10,7 @@
 
     <link href='http://fonts.googleapis.com/css?family=Signika+Negative' rel='stylesheet' type='text/css'>
 
-    <link href="css/google-charts.css" rel="stylesheet" />
+    <link href="css/my.css" rel="stylesheet" />
 
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -25,8 +25,8 @@
 
 	<div id="impress">
 		<div id="start" class="step" data-x="500" data-y="500" data-scale="25">
-            <div style="width: 1100px">
-                <img src="img/google-developers.png" style="float: left"> <h1 style="font-size: 100px">Geo-Related Google APIs</h1>	
+            <div style="width: 1100px;">
+                <img src="img/google-developers.png" style="float: left"> <h1 style="font-size: 80px; color: #5080FF; font-family: sans-serif;font-weight: bold;">Geo-Related Google APIs</h1>	
             </div>
 
             <div class="plusbox">
@@ -53,32 +53,96 @@
 
         </div>
 
-    	 <div id="googlemaps" class="step darkbg" data-x="-9000" data-y="-1000">
-            <h1>Google Maps (Hier das Maps-Icon noch verbauen)</h1>
-       		<iframe
+    	 <div id="googlemaps1" class="step darkbg" data-x="-9000" data-y="-1000">
+            <h1>Google Maps</h1>
+            <iframe
   				width="600"
   				height="450"
   				frameborder="0" style="border:0"
-  				src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCAYEhJ4J-VBhCU1tMzAoOM8o6o4Fn_aVA&q=Space+Needle,Seattle+WA">
+  				src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCAYEhJ4J-VBhCU1tMzAoOM8o6o4Fn_aVA&q=Dockland,Hamburg">
 			 </iframe>
-
-            
-            <ul> 
-            	<li>TODO: Hier Screenshot von Maps einfügen</li>
-            	<li>TODO:Zeigen wie man eine Map einbettet und da einen marker drauf setzt.</li>
-            	<li>The maps contains related APIs: Directions API (routing), Distance Matrix API, Elevation API, Timezone API & Geocoding API</li>
-            </ul>
         </div>
 
+		<div id="googlemaps2" class="step darkbg" data-x="-8000" data-y="-2000">
+            <h1>Google Maps - embedding</h1>
+            <img src="https://docs.google.com/drawings/d/1rt9q2WzZjrREu7Mo1Q2ikiIKEtyeGkq3jBTdxIGaXQs/pub?w=1488&h=360"/>			
+        </div>
 
-        <div id="summary" class="step darkbg" data-x="-7000" data-y="4000" data-rotate="180">
-            <h1>Zusammenfassung</h1>
+        <div id="googlemaps3" class="step darkbg" data-x="-7000" data-y="-3000">
+            <h1>Google Maps - getting the key</h1>
+            <img src="img/api-console.png"/>			
+        </div>
+
+        <div id="googlemaps4" class="step lightbg" data-x="-6000" data-y="-4000">
+            <h1>Google Maps 4 - modes</h1>
+            <div style="float:left">
+            Place<br/>
+            <iframe
+  				width="400"
+  				height="300"
+  				frameborder="0" style="border:0"
+  				src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCAYEhJ4J-VBhCU1tMzAoOM8o6o4Fn_aVA&q=Dockland,Hamburg">
+			 </iframe>
+		     </div>
+			 <div>
+             Directions<br/>
+			 <iframe
+  				width="400"
+  				height="300"
+  				frameborder="0" style="border:0"
+  				src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyCAYEhJ4J-VBhCU1tMzAoOM8o6o4Fn_aVA&&origin=Dockland,Hamburg&destination=Central+Station,Hamburg">
+			 </iframe>
+			 </div>
+			 <div style="float:left">
+            Search<br/>
+            <iframe
+  				width="400"
+  				height="300"
+  				frameborder="0" style="border:0"
+  				src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCAYEhJ4J-VBhCU1tMzAoOM8o6o4Fn_aVA&q=Dockland,Hamburg">
+			 </iframe>
+		     </div>
+			 <div>
+             View<br/>
+			 <iframe
+  				width="400"
+  				height="300"
+  				frameborder="0" style="border:0"
+  				src="https://www.google.com/maps/embed/v1/view?key=AIzaSyCAYEhJ4J-VBhCU1tMzAoOM8o6o4Fn_aVA&center=53.543557,9.937381&zoom=17&maptype=satellite">			 </iframe>
+			 </div>
+        </div>
+
+        <div id="googlemaps5" class="step lightbg" data-x="-5000" data-y="-5000">
+            <h1>Embedding Google Maps - Summary</h1>
             <ul>
-                <li>Es ist einfach Charts zu erstellen!</li>
-                <li>Anbindung an Google Spreadsheet</li>
-                <li>Zusammenstellen von Dashboards</li>                        
+            	<li>embedding google maps is easy!</li>
+            	<li>it's free of charge</li>
+            	<li>Find more info here: <a href="https://developers.google.com/maps/documentation/embed/guide">https://developers.google.com/maps/documentation/embed/guide</a></li>
+            	<li>Google Maps has still more APIs for you...</li>
+            </ul>            
+        </div>
+
+        <div id="googlegeo1" class="step lightbg" data-x="-4000" data-y="-6000">
+            <h1>Google Geocoding API</h1>
+            <img src="img/geo-coding.png">
+        </div>
+
+        <div id="googlegeo2" class="step lightbg" data-x="-3000" data-y="-7000">
+            <h1>What is Geocoding?</h1>
+            <img src="https://docs.google.com/drawings/d/19VLZCQz8EdYEid1I0ISPViibv2cYAuYWmQ2Oh5ldrFg/pub?w=1204&h=278">
+        </div>
+
+        <div id="googlegeo3" class="step lightbg" data-x="-2000" data-y="-8000">
+            <h1></h1>
+            <ul>
+            	<li>JavaScript and Java client libraries available</li>
+            	<li>There are limits!</li>
             </ul>
         </div>
+
+
+
+
 
         <div id="finish" class="step" data-x="3000" data-y="20000" data-scale="25" data-rotate="180">
             Vielen Dank!
