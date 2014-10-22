@@ -259,7 +259,7 @@
         	<ul>
         		<li>available in all modern browsers (Internet Explorer 9+, Firefox, Chrome, Safari and Opera)</li>
         		<li>Geolocation is much more accurate for devices with GPS, like iPhone.</li>
-        		<li>easy accessible by javascript </li>
+        		<li>easy accessible by javascript</li>        		
         	</ul>
         </div>
 
@@ -292,6 +292,41 @@
 				"<br>Longitude: " + position.coords.longitude; 
 			}
         	</script>
+        </div>
+
+        <div id="iptargetting4" class="step lightbg" data-x="-13000" data-y="-2000">
+        	<h1>Sometimes you can not or will not ask for permissions...</h1>
+        	<ul>
+        		<li>Use old-fashioned IP-Targetting instead</li>
+        		<li>Not as accurate as geolocation from the browser</li>
+        		<li>Accuracy on country level >90% </li>
+        		<li>Accuracy on city level ~70% </li>
+        		<li>Using App-Engine to host your website includes IP-Targetting from Google</li>
+        	</u>
+        </div>
+
+        <div id="iptargetting5" class="step lightbg" data-x="-15000" data-y="-2000">
+        	<h1>IP Targetting on Google App-Engine</h1>
+        	<ul>
+        		<li>Every request to your webapp is enriched with location data</li>
+        		<li>X-AppEngine-Country  = ISO 3166-1 alpha-2 country code</li>
+        		<li>X-AppEngine-Region  = Name of region from which the request originated</li>
+        		<li>X-AppEngine-City  = Name of the city from which the request originated</li>
+        		<li>X-AppEngine-CityLatLong  = Latitude and longitude of the city, "37.386051,-122.083851"</li>
+        	</ul>
+       		<a href="https://cloud.google.com/appengine/docs/java/requests" target="_cool">see here for full documentation</a>
+        </div>
+
+        <div id="iptargetting6" class="step lightbg" data-x="-17000" data-y="-2000">
+        	<h1>IP Targetting on Google App-Engine - Demo</h1>
+        	See http://mylocationtest.appspot.com
+        	<iframe 
+        		width="800"
+				height="600"
+				frameborder="3" 
+				style="border:3px solid grey;"
+        		src="http://mylocationtest.appspot.com">
+        	</iframe>
         </div>
 
         <div id="finish" class="step" data-x="3000" data-y="20000" data-scale="25" data-rotate="180">
