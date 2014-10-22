@@ -28,6 +28,7 @@ body {
     line-height: 1;
     color: #6f6f6f;
     font-family: 'Signika Negative', sans-serif;
+    background-image: url(../img/map_background.jpg);
 }    
 
 ol, ul {
@@ -140,9 +141,6 @@ code {
 
 #finish {
      font-size: 136px;
-}
-
-#whatisgooglecharts {
 }
 
 #summary ul li {
