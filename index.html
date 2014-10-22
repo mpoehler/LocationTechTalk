@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>Google Charts by Marco Pöhler</title>
+    <title>Geo-Related Google APIs by Marco Pöhler</title>
     
     <meta name="description" content="" />
     <meta name="author" content="Marco Pöhler" />
@@ -14,6 +15,52 @@
 
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["geochart"]});
+      google.setOnLoadCallback(drawCharts);
+
+      function drawCharts() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Popularity'],
+          ['Germany', 200],
+          ['United States', 300],
+          ['Brazil', 400],
+          ['Canada', 500],
+          ['France', 600],
+          ['RU', 700]
+        ]);
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, {});
+
+		var data2 = google.visualization.arrayToDataTable([
+			['City',   'Population', 'Area'],
+			['Rome',      2761477,    1285.31],
+			['Milan',     1324110,    181.76],
+			['Naples',    959574,     117.27],
+			['Turin',     907563,     130.17],
+			['Palermo',   655875,     158.9],
+			['Genoa',     607906,     243.60],
+			['Bologna',   380181,     140.7],
+			['Florence',  371282,     102.41],
+			['Fiumicino', 67370,      213.44],
+			['Anzio',     52192,      43.43],
+			['Ciampino',  38262,      11]
+	      ]);
+
+		  var chart2 = new google.visualization.GeoChart(document.getElementById('chart_div'));
+		  chart2.draw(data2, {
+			region: 'IT',
+			displayMode: 'markers',
+			colorAxis: {colors: ['green', 'blue']}
+		  });
+
+      }
+    </script>
 </head>
 
 <body class="impress-not-supported">
@@ -133,16 +180,119 @@
         </div>
 
         <div id="googlegeo3" class="step lightbg" data-x="-2000" data-y="-8000">
-            <h1></h1>
+            <h1>Geocoding Service vs. Geocoding API</h1>
             <ul>
-            	<li>JavaScript and Java client libraries available</li>
-            	<li>There are limits!</li>
+            	<li>Geocoding Service - dynamically translating input from users</li>
+            	<li>Geocoding API - statically translating already known addresses</li>
             </ul>
         </div>
 
+        <div id="googlegeo4" class="step lightbg" data-x="-1000" data-y="-9000">
+            <h1>Usage Limits for Geocoding API</h1>
+            <ul>
+            	<li>Geocoding API (free): 2500 requests per day / 5 per second</li>
+            	<li>Geocoding API (Maps API for work): 100.000 requests per day / 10 per second</li>
+            	<li>Only allowed in conjunction with Google Maps!</li>
+            </ul>
+        </div>
 
+        <div id="googlegeo5" class="step lightbg" data-x="0" data-y="-10000">
+            <h1>How does it work?</h1>
+            <img src="https://docs.google.com/drawings/d/1RD2t2SwvqqE1vp6_KblODC90QgPVP762PAeyy-Sx0O4/pub?w=876&h=371">
+        </div>
 
+        <div id="googlegeo6" class="step lightbg" data-x="-1000" data-y="-8000">
+            <h1>Query Example</h1>
+            <img src="https://docs.google.com/drawings/d/1c1JgVYdVjSSeRx5FyHNSvFyPRc7N6yCzuFGnMX-ZHyE/pub?w=1324&h=304">
+        </div>
 
+        <div id="googlegeo7" class="step lightbg" data-x="-2000" data-y="-7000">
+            <img src="https://docs.google.com/drawings/d/1ZFfw36R2kPVVbpHuBw1fn1nk4OlxlTHmqVbWkv2Eveo/pub?w=1440&h=1080">
+        </div>
+
+        <div id="googlegeo8" class="step lightbg" data-x="-3000" data-y="-6000">
+            <h1>Reverse Query Example</h1>
+            <img src="https://docs.google.com/drawings/d/1WknzVIGsNXsz1fzzJL36SdD6ye0NvfRDX4l1ucPoJGE/pub?w=1214&h=276">
+        </div>
+
+        <div id="googlegeo9" class="step lightbg" data-x="-4000" data-y="-5000">
+        	<h1>Reverse Query Response</h1>
+        	multiple results, consider location_type
+            <iframe 
+            width="800"
+            height="600"
+            frameborder="3" 
+            style="border:3px solid grey;"
+            src="http://maps.googleapis.com/maps/api/geocode/json?latlng=53.54331,9.937299999999999&sensor=false&language=de"></iframe>
+        </div>
+
+        <div id="googlechart1" class="step lightbg" data-x="-5000" data-y="-4000">
+        	<h1>Visualize Data with Geochart<a href="https://developers.google.com/chart/interactive/docs/gallery/geochart">¹</a></h1>
+        	<ul>
+        		<li>Part of the Google Chart Library</li>
+        		<li>Supports Region and Marker Charts</li>
+        	</ul>        	
+        	<div id="regions_div" style="width: 300px; height: 200px; float: left;"></div>
+			<div id="chart_div" style="width: 300px; height: 200px; padding-left: 300px;"></div>
+        </div>
+
+         <div id="googlechart2" class="step lightbg" data-x="-5000" data-y="-3000">
+        	<h1>Code Sample</h1>
+        	<iframe
+				width="800"
+				height="600"
+				frameborder="3" 
+				style="border:3px solid grey;"
+				src="https://raw.githubusercontent.com/mpoehler/LocationTechTalk/gh-pages/index.html"></iframe>
+        </div>
+
+		<div id="iptargetting" class="step lightbg" data-x="-6000" data-y="-3000">
+        	<h1>How to locate users in the web?</h1>
+        	<ul>
+        		<li>HTML5 Geolocation</li>
+        		<li>IP-Targetting</li>
+        	</ul>
+        </div>
+
+        <div id="iptargetting1" class="step lightbg" data-x="-8000" data-y="-3000">
+        	<h1>HTML5 Geolocation</h1>
+        	<ul>
+        		<li>available in all modern browsers (Internet Explorer 9+, Firefox, Chrome, Safari and Opera)</li>
+        		<li>Geolocation is much more accurate for devices with GPS, like iPhone.</li>
+        		<li>easy accessible by javascript </li>
+        	</ul>
+        </div>
+
+        <div id="iptargetting2" class="step lightbg" data-x="-9000" data-y="-2000">
+        	<h1>HTML5 Geolocation - Code Example</h1>
+			<img src="https://docs.google.com/drawings/d/1xPzPHfhsCvndeMKEM5fT4rdVTjRXvteudfVJwROYHPU/pub?w=944&h=444">
+        </div>
+
+        <div id="iptargetting3" class="step lightbg" data-x="-11000" data-y="-2000">
+        	<h1>HTML5 Geolocation - Example</h1>
+
+        	<p id="demo">Click the button to get your coordinates:</p>
+        	
+        	<button onclick="getLocation()">Try It</button>
+        	
+        	<script>
+
+        	var x = document.getElementById("demo");
+
+			function getLocation() {
+				if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(showPosition);
+				} else {
+					x.innerHTML = "Geolocation is not supported by this browser.";
+				}
+			}
+
+			function showPosition(position) {
+				x.innerHTML = "Latitude: " + position.coords.latitude + 
+				"<br>Longitude: " + position.coords.longitude; 
+			}
+        	</script>
+        </div>
 
         <div id="finish" class="step" data-x="3000" data-y="20000" data-scale="25" data-rotate="180">
             Vielen Dank!
